@@ -1,0 +1,8 @@
+<h1>Lista Detalhes (Show)</h1>
+  <p><%= @local.name %></p>
+  <p><%= @local.city %></p>
+  <p><%= @local.descritpion %></p>
+  <p><%= @local.price %></p>
+  <%= link_to 'Back', locals_path %>
+  <%= link_to 'Edit', edit_local_path(@local) %>
+  <%= link_to 'Delete', local_path(@local), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
