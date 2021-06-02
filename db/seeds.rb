@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Cleaning database'
+Local.destroy_all
+
+puts 'Creating Locals...'
+
+Local.create!(
+  user: User.first,
+  name: "Random house",
+  city: "larchmont",
+  description: "kshkjhdjdkhks",
+  price: "15"
+)
+
+Local.create!(
+  user: User.first,
+  name: "Random house 1",
+  city: "mamaroneck",
+  description: "kshkjhdjdkhks",
+  price: "20"
+)
+
+puts 'Done!'
