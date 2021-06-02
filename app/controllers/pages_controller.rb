@@ -6,5 +6,9 @@ class PagesController < ApplicationController
   def my_bookings
     @bookings = current_user.bookings
   end
+
+  def pet_host
+    @locals = current_user.locals
+  end
   
 end
