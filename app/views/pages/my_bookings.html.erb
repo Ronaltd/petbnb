@@ -1,0 +1,9 @@
+<h1>My Bookings</h1>
+
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li>Reserved <%= booking.local.name %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+    <% end %>
+
+    <%= link_to 'Back', root_path %>
+  </ul>

@@ -5,4 +5,13 @@
   <p><%= @local.price %></p>
   <%= link_to 'Back', locals_path %>
   <%= link_to 'Edit', edit_local_path(@local) %>
+  <%= link_to "Booking", new_local_booking_path(@local)  %>
   <%= link_to 'Delete', local_path(@local), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+
+  <% if current_user == @local.user %>
+  <ul>
+    <% @local.bookings.each do |booking| %>
+      <li>Reserved for <%= booking.user.email %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+    <% end %>
+  </ul>
+  <% end %>

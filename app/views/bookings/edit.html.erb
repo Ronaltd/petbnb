@@ -1,0 +1,9 @@
+<h1>EDIT LOCAL</h1>
+<%= simple_form_for [@booking] do |f| %>
+  <%= f.input :checkin_date %>
+  <%= f.input :checkout_date %>
+  <%= f.input :pet_name %>
+  <%= f.input :pet_type %>
+  <%= f.input :pet_weight %>
+  <%= f.submit %>
+<% end %>
