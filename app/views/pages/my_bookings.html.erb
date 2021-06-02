@@ -6,7 +6,9 @@
       <br>
       <ul class="list-group">
         <% @bookings.each do |booking| %>
-          <li class="list-group-item">Reserved <%= booking.local.name %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+          <%= link_to booking_path(booking) do %>
+            <li class="list-group-item">Reserved <%= booking.local.name %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+          <% end %>
         <% end %>
         <br>
         <%= link_to 'Back', root_path, class: "btn-flat" %>
