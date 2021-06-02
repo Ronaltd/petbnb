@@ -1,6 +1,6 @@
-<div class="container text-center">
+<div class="container">
   <br>
-  <div class="card">
+  <div class="card text-center">
     <br>
     <h1><%= @local.name %></h1>
     <br>
@@ -20,14 +20,17 @@
     <%= link_to "Booking", new_local_booking_path(@local), class: 'btn-flat-show m-1 py-3' %>
     <%= link_to 'Delete', local_path(@local), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-flat-show-delete m-1 py-3' %>
   </div>
-  <br>
-  <div>
+    <br>
     <% if current_user == @local.user %>
-    <ul>
-      <% @local.bookings.each do |booking| %>
-        <li>Reserved for <%= booking.user.email %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
-      <% end %>
-    </ul>
+        <% @local.bookings.each do |booking| %>
+      <div class="p-3 mb-2 bg-secondary text-white">
+        <ul>
+          <li>Reserved for <%= booking.user.email %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+        </ul>
+      </div>
+        <% end %>
     <% end %>
+  <br>
+  <div class="text-center">
   </div>
 </div>
