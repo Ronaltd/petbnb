@@ -44,10 +44,12 @@ class BookingsController < ApplicationController
       if @booking.update(booking_params)
         redirect_to booking_path(@booking), notice: "Successfully Updated"
       else
-        render :edit, notice: "Esta data já está reservada!!"
+        flash[:notice] = "Esta data já está reservada!!"
+        render :edit
       end
     else
-      render :edit, notice: "Esta data já está reservada!!"
+      flash[:notice] = "Esta data já está reservada!!"
+      render :edit
     end
 
   end
