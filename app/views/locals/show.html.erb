@@ -1,17 +1,34 @@
-<h1>Lista Detalhes (Show)</h1>
-  <p><%= @local.name %></p>
-  <p><%= @local.city %></p>
-  <p><%= @local.descritpion %></p>
-  <p><%= @local.price %></p>
-  <%= link_to 'Back', locals_path %>
-  <%= link_to 'Edit', edit_local_path(@local) %>
-  <%= link_to "Booking", new_local_booking_path(@local)  %>
-  <%= link_to 'Delete', local_path(@local), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger" %>
+<div class="container text-center">
+  <br>
+  <div class="card">
+    <br>
+    <h1><%= @local.name %></h1>
+    <br>
+    <figure class="figure p-3">
+      <img src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg" alt="" class="figure-img img-fluid rounded" >
+    </figure>
+    <p><%= @local.descritpion %></p>
+    <hr />
 
-  <% if current_user == @local.user %>
-  <ul>
-    <% @local.bookings.each do |booking| %>
-      <li>Reserved for <%= booking.user.email %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+    <h3><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i>  <%= @local.city %></h3>
+    <hr />
+
+    <h2><i class="fas fa-dollar-sign" style="font-size:30x; color:#457b9d"></i>  <%= @local.price %> </h2>
+    <hr />
+
+    <%= link_to 'Edit', edit_local_path(@local), class: 'btn-flat-show m-1 py-3' %>
+    <%= link_to "Booking", new_local_booking_path(@local), class: 'btn-flat-show m-1 py-3' %>
+    <%= link_to 'Delete', local_path(@local), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-flat-show-delete m-1 py-3' %>
+    <%= link_to 'Back', locals_path %>
+  </div>
+  <br>
+  <div>
+    <% if current_user == @local.user %>
+    <ul>
+      <% @local.bookings.each do |booking| %>
+        <li>Reserved for <%= booking.user.email %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+      <% end %>
+    </ul>
     <% end %>
-  </ul>
-  <% end %>
+  </div>
+</div>

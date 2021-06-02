@@ -1,8 +1,13 @@
-<h1>EDIT LOCAL</h1>
-<%= simple_form_for(@local) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :city %>
-  <%= f.input :descritpion %>
-  <%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+<br>
+  <div class="card p-5">
+    <h1>Edit Local</h1>
+    <%= simple_form_for(@local) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :city %>
+      <%= f.input :descritpion %>
+      <%= f.input :price %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
