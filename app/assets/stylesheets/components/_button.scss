@@ -1,5 +1,12 @@
-btn-sample {
-  color: #930DBF;
-  background-color: #94B6F2;
-  border-color: #4727E6;
+.btn-flat {
+  color: #f1faee;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #e63946;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #ca323f;
+  color: #f1faee;
 }
