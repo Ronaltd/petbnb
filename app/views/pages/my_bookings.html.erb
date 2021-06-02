@@ -1,9 +1,17 @@
-<h1>My Bookings</h1>
+<div class="container">
+<br>
+  <div class="card p-5 text-center">
 
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li>Reserved <%= booking.local.name %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
-    <% end %>
+    <h1>My Bookings</h1>
+      <br>
+      <ul class="list-group">
+        <% @bookings.each do |booking| %>
+          <li class="list-group-item">Reserved <%= booking.local.name %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+        <% end %>
+        <br>
+        <%= link_to 'Back', root_path, class: "btn-flat" %>
+      </ul>
 
-    <%= link_to 'Back', root_path %>
-  </ul>
+      </div>
+</div>
+  
