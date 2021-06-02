@@ -1,6 +1,8 @@
-<h1> LOCALS AVAILABLES</h1>
-  <ul>
-    <% @locals.each do |local| %>
-      <li> <%= link_to local.name, local_path(local) %></li>
-    <% end %>
-  </ul>
+<div class="container">
+  <h1> LOCALS AVAILABLES</h1>
+    <ul>
+      <% @locals.each do |local| %>
+        <li> <%= link_to local.name, local_path(local) %></li>
+      <% end %>
+    </ul>
+</div>
