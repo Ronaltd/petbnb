@@ -1,12 +1,14 @@
 <div class="container">
 <br>
-<h1>NEW LOCAL</h1>
-<%= simple_form_for(@local) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :city %>
-  <%= f.input :descritpion %>
-	<%= f.input :price %>
-  <%= f.submit %>
-<% end %>
+<div class="card p-5">
+  <h1>New Local</h1>
+  <%= simple_form_for(@local) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :city %>
+    <%= f.input :descritpion %>
+    <%= f.input :price %>
+    <%= f.submit %>
+  <% end %>
+</div>
 
 </div>

@@ -9,4 +9,50 @@
 .btn-flat:hover {
   background: #ca323f;
   color: #f1faee;
+  text-decoration: none;
+}
+
+.btn-flat-big {
+  color: #f1faee;
+  padding: 15px 250px;
+  border-radius: 4px;
+  background: #457b9d;
+  transition: background 0.3s ease;
+  font-size: 20px;
+}
+
+.btn-flat-big:hover {
+  background: #396480;
+  color: #f1faee;
+  text-decoration: none;
+}
+
+.btn-flat-show {
+  color: #f1faee;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #457b9d;
+  transition: background 0.3s ease;
+  font-size: 17px
+}
+
+.btn-flat-show:hover {
+  background: #396480;
+  color: #f1faee;
+  text-decoration: none;
+}
+
+.btn-flat-show-delete {
+  color: #f1faee;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #e63946;
+  transition: background 0.3s ease;
+  font-size: 17px
+}
+
+.btn-flat-show-delete:hover {
+  background: #ca323f;
+  color: #f1faee;
+  text-decoration: none;
 }
