@@ -1,23 +1,17 @@
 <div class="container-fluid">
-  <br>
-  <h1 class="text-center">Locals Availables</h1>
-  <br>
-  <div class="row justify-content-md-center">
+  <h1 class="text-center pt-3 font-weight-bold"></i>Locals Availables</h1>
+  <div class='d-flex flex-column justify-content-md-center mb-3'>
     <% @locals.each do |local| %>
-      <div class="card d-flex align-items-start flex-column m-2" style="width: 18rem;">
-        <img class="card-img-top" src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg" alt="Card image cap">
-        <div class="card-body">
-        <div>
-          <h3 class="card-title"><%= local.name %></h3>
-          <hr />
-          <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:20px; color:#457b9d"></i>  <%= local.city %></p>
-          <hr />
-            <h2 class="card-text mt-auto p-2"><i class="fas fa-dollar-sign" style="font-size:30px; color:#457b9d"></i>  <%= local.price %></h2>
-            <%= link_to 'Check', local_path(local), class: 'btn-flat mt-auto p-22', target: "_blank" %>
+      <div class="card-product">
+        <img src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg" />
+        <div class="card-product-infos">
+          <h2><%= local.name %></h2>
+          <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i>  <%= local.city %></p>
+          <p class="card-text mt-auto p-2"><i class="fas fa-dollar-sign" style="font-size:30px; color:#457b9d"></i>  <%= local.price %></p>
+          <%= link_to 'Check', local_path(local), class: 'btn-flat mt-auto p-22', target: "_blank" %>
         </div>
-        </div>
-      </div>
+      </div>      
     <% end %>
+     
   </div>
-  <br>
  </div>
