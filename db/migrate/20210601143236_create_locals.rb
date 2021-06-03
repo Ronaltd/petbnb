@@ -3,7 +3,7 @@ class CreateLocals < ActiveRecord::Migration[6.0]
     create_table :locals do |t|
       t.string :name
       t.string :city
-      t.text :descritpion
+      t.text :description
       t.string :price
       t.references :user, null: false, foreign_key: true
 

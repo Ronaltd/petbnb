@@ -7,7 +7,7 @@
     <figure class="figure p-3">
       <img src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg" alt="" class="figure-img img-fluid rounded" >
     </figure>
-    <p><%= @local.descritpion %></p>
+    <p><%= @local.description %></p>
     <hr />
 
     <h3><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i>  <%= @local.city %></h3>
@@ -16,9 +16,16 @@
     <h2><i class="fas fa-dollar-sign" style="font-size:30x; color:#457b9d"></i>  <%= @local.price %> </h2>
     <hr />
 
-    <%= link_to 'Edit', edit_local_path(@local), class: 'btn-flat-show m-1 py-3' %>
+
     <%= link_to "Booking", new_local_booking_path(@local), class: 'btn-flat-show m-1 py-3' %>
-    <%= link_to 'Delete', local_path(@local), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-flat-show-delete m-1 py-3' %>
+
+    <% if policy(@local).edit? %>
+      <%= link_to 'Edit', edit_local_path(@local), class: 'btn-flat-show m-1 py-3' %>
+    <% end %>
+    <% if policy(@local).destroy? %>
+      <%= link_to 'Delete', local_path(@local), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn-flat-show-delete m-1 py-3' %>
+    <% end %>
+
     <%= link_to 'Back', locals_path %>
   </div>
   <br>
