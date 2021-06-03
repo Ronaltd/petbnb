@@ -1,20 +1,23 @@
 class LocalsController < ApplicationController
+  before_action :set_local, only: [:show, :edit, :update, :destroy]
 
   def index
-    @locals = Local.all
+    # object collection use policy_scope
+    @locals = policy_scope(Local)
   end
 
   def show
-    @local = Local.find(params[:id])
   end
 
   def new
     @local = Local.new
+    authorize @local
   end
 
   def create
     @local = Local.new(local_params)
     @local.user = current_user
+    authorize @local
     if @local.save
       redirect_to @local
     else 
@@ -23,11 +26,9 @@ class LocalsController < ApplicationController
   end
   
   def edit
-    @local = Local.find(params[:id])
   end
   
   def update
-    @local = Local.find(params[:id])
     if @local.update(local_params)
       redirect_to @local, notice: "Successfully Updated"
     else
@@ -36,12 +37,16 @@ class LocalsController < ApplicationController
   end
   
   def destroy
-    @local = Local.find(params[:id])
     @local.destroy
     redirect_to locals_path, notice: "Successfully Deleted"
   end
 
   private
+
+  def set_local
+    @local = Local.find(params[:id])
+    authorize @local
+  end
 
   def local_params
     params.require(:local).permit(:name, :city, :descritpion, :price)
