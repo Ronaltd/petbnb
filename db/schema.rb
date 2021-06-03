@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_06_01_181458) do
   create_table "locals", force: :cascade do |t|
     t.string "name"
     t.string "city"
-    t.text "description"
+    t.text "descritpion"
     t.string "price"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
