@@ -8,7 +8,10 @@
 
 puts 'Cleaning database'
 Local.destroy_all
-
+User.create!(
+  email: "teste01@teste.com",
+  password: 'abc123'
+)
 puts 'Creating Locals...'
 
 Local.create!(
