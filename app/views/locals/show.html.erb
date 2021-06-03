@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid mt-2">
   <div class='d-flex justify-content-center align-items-center '>
     <div class="card text-center">
       <div class='row'>
@@ -9,14 +9,14 @@
         </div>
 
         <div class='col-12 col-md-6 my-3 px-5'>
-          <h3><%= @local.name %></h3>
+          <h3 class="font-weight-bold"><%= @local.name %></h3>
           <p class='text-justify p-2'><%= @local.descritpion %></p>
           <hr />
 
-          <p><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i>  <%= @local.city %></p>
+          <p class='text-justify p-2'><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i>  <%= @local.city %></p>
           <hr />
 
-          <p><i class="fas fa-dollar-sign" style="font-size:30x; color:#457b9d"></i>  <%= @local.price %> </p>
+          <p class='text-justify p-2'><i class="fas fa-dollar-sign" style="font-size:30x; color:#457b9d"></i>  <%= @local.price %> </p>
           <hr />
           <div class="">
             <%= link_to "Booking", new_local_booking_path(@local), class: 'btn-flat-show py-2' %>
