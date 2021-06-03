@@ -35,6 +35,12 @@ gem 'simple_form'
 # Devise gem
 gem 'devise'
 
+# geocode gem
+gem 'geocoder'
+
+# pundit gem
+gem 'pundit'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
