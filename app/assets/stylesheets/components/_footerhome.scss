@@ -2,12 +2,32 @@
   text-align: center;
   width: 100%;
   margin: 0 auto;
-  background-color: #e3d0b9;
-  padding: 30px;
+  background-color: #a8dadc;
+  padding: 10px;
   box-shadow: 0 10px 30px rgba(10, 10, 10, 0.3);
   transition-delay: 0.5s;
-  line-height: 1.5;
+  line-height: 1;
 }
 
 
+.icons {
+  font-size: 35px;
+  margin-top: 4px;
+}
 
+.fontawesome {
+  font-size: 50px;
+  display: inline-block;
+  margin-right: 30px;
+  text-decoration: none;
+  color: rgba(110,110,110, 0.2)
+}
+
+.fontawesome:hover {
+  color: rgba(98, 149, 156, 0.5)
+}
+
+
+.copyright{
+  color: rgba(100, 100, 100, 0.5)
+}
