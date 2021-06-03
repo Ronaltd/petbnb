@@ -11,9 +11,21 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <footer class="bottom-container d-flex justify-content-center pt-3 mt-auto ">
+
+      <ul class="icons">
+
+        <a class="fontawesome" href="#"><i class="fab fa-facebook-square"></i></a>
+        <a class="fontawesome" href="#"><i class="fab fa-instagram-square"></i></a>
+        <a class="fontawesome" href="#"><i class="fab fa-twitter"></i></a>
+      </ul>
+
+      <p class="copyright">© 2021 Petbnb.</p>
+
+    </footer>
   </body>
 </html>
