@@ -4,23 +4,24 @@
   <br>
   <div class="row justify-content-md-center">
     <% @locals.each do |local| %>
-      <div class="card m-2" style="width: 18rem;">
+      <div class="card d-flex align-items-start flex-column m-2" style="width: 18rem;">
         <img class="card-img-top" src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg" alt="Card image cap">
         <div class="card-body">
+        <div>
           <h3 class="card-title"><%= local.name %></h3>
           <hr />
           <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:20px; color:#457b9d"></i>  <%= local.city %></p>
           <hr />
-          <h2 class="card-text"><i class="fas fa-dollar-sign" style="font-size:30px; color:#457b9d"></i>  <%= local.price %></h2>
-          <br>
-          <%= link_to 'Check', local_path(local), class: 'btn-flat', target: "_blank" %>
+            <h2 class="card-text mt-auto p-2"><i class="fas fa-dollar-sign" style="font-size:30px; color:#457b9d"></i>  <%= local.price %></h2>
+            <%= link_to 'Check', local_path(local), class: 'btn-flat mt-auto p-22', target: "_blank" %>
+        </div>
         </div>
       </div>
     <% end %>
   </div>
   <br>
   <div class="text-center">
-  <%= link_to 'Add Local', new_local_path, class: 'btn-flat-big' %>
+  <%= link_to 'Add Local', new_local_path, class: 'btn-flat-big', target: "_blank" %>
   </div>
   <br>
 </div>

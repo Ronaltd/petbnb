@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
   def show
-    # @booking = Booking.find(params[:id])
+
   end
 
   def new
@@ -33,11 +33,10 @@ class BookingsController < ApplicationController
   end
 
   def edit
-    # @booking = Booking.find(params[:id])
+
   end
 
   def update
-    # @booking = Booking.find(params[:id])
     @local = @booking.local
     bookings = @local.bookings
     temp_booking = Booking.new(booking_params)
@@ -48,16 +47,17 @@ class BookingsController < ApplicationController
       if @booking.update(booking_params)
         redirect_to booking_path(@booking), notice: "Successfully Updated"
       else
-        render :edit, notice: "Esta data já está reservada!!"
+        flash[:notice] = "Esta data já está reservada!!"
+        render :edit
       end
     else
-      render :edit, notice: "Esta data já está reservada!!"
+      flash[:notice] = "Esta data já está reservada!!"
+      render :edit
     end
 
   end
 
   def destroy
-    # @booking = Booking.find(params[:id])
     @local = @booking.local
     @booking.destroy
     redirect_to locals_path(@local), notice: "Successfully Deleted"
