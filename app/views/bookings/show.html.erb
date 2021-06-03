@@ -1,39 +1,53 @@
-<h1>Successfully Booked!</h1>
+<div class="container">
+<br>
+  <div class="card p-5 text-center">
 
-  <h4>Name:</h4>
-  <p><%= @booking.local.name %></p>
-  <br>
+    <h1>Successfully Booked!</h1>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Check-in</th>
+            <th scope="col">Check-out</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <td><%= @booking.local.name %></td>
+          <td><%= @booking.user.email %></td>
+          <td><%= @booking.checkin_date %></td>
+          <td><%= @booking.checkout_date %></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Your pet name</th>
+            <th scope="col">Pet type</th>
+            <th scope="col">Pet weight</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <td><%= @booking.pet_name %></td>
+          <td><%= @booking.pet_type %></td>
+          <td><%= @booking.pet_weight %></td>
+          </tr>
+        </tbody>
+      </table>
 
-  <h4>E-mail:</h4>
-  <p><%= @booking.user.email %></p>
-  <br>
-
-  <h4>Check-in: </h4>
-  <p><%= @booking.checkin_date %></p>
-  <br>
-
-  <h4>Check-out:</h4>
-  <p><%= @booking.checkout_date %></p>
-  <br>
-
-  <h4>Your pet name:</h4>
-  <p><%= @booking.pet_name %></p>
-  <br>
-
-  <h4>Pet type:</h4>
-  <p><%= @booking.pet_type %></p>
-  <br>
-
-  <h4>Pet weight:</h4>
-  <p><%= @booking.pet_weight %></p>
-  <br>
-
-
-  <h4>Status:</h4>
-  <p><%= @booking.status %></p>
-  <%= link_to 'Bookings List', my_bookings_path, class:"btn-flat-show  m-1 py-3" %>
-  <%= link_to 'Edit', edit_booking_path(@booking), class:"btn-flat-show  m-1 py-3" %>
-  <%= link_to 'Delete', booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-flat-show-delete  m-1 py-3" %>
+      <h4>Status:</h4>
+      <p><%= @booking.status %></p>
+      <%= link_to 'Bookings List', my_bookings_path, class:"btn-flat-show  m-1 py-3" %>
+      <%= link_to 'Edit', edit_booking_path(@booking), class:"btn-flat-show  m-1 py-3" %>
+      <%= link_to 'Delete', booking_path(@booking), method: :delete, data: { confirm: "Are you sure?" }, class:"btn-flat-show-delete  m-1 py-3" %>
+        </div>
     </div>
+
+      </div>
 </div>
   
