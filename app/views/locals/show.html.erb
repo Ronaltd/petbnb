@@ -37,7 +37,7 @@
         <% @local.bookings.each do |booking| %>
       <div class="p-3 mb-2 bg-secondary text-white">
         <ul>
-          <li>Reserved for <%= booking.user.email %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
+          <li>Reserved for <%= booking.pet_type %> : <%= booking.pet_name %> - <%= booking.user.email %> at <%= booking.checkin_date.strftime("%d/%m/%Y") %> - <%= booking.checkout_date.strftime("%d/%m/%Y") %></li>
         </ul>
       </div>
         <% end %>

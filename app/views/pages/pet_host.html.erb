@@ -1,0 +1,28 @@
+<div class="container">
+<br>
+  <div class="card p-5 text-center">
+
+    <h1>My Locals</h1>
+      <br>
+      <ul class="list-group">
+        <% @locals.each do |local| %>
+          <%= link_to local_path(local) do %>
+            <li class="list-group-item">nome: <%=local.name %></li>
+          <% end %>
+          <% local.bookings.each do |booking| %>
+          <%= booking.pet_name  %>
+          <% end %>
+        <% end %>
+        <br>
+        <%= link_to 'Back', root_path, class: "btn-flat" %>
+      </ul>
+
+  </div>
+  
+  <br>
+  <br>
+
+  <div class="text-center">
+    <%= link_to 'Add Local', new_local_path, class: 'btn-flat-big', target: "_blank" %>
+</di  v>
+</div>
