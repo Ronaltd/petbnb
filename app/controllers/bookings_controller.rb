@@ -43,6 +43,12 @@ class BookingsController < ApplicationController
     overlap = bookings.any? do |booking|
       (booking.checkin_date..booking.checkout_date).overlaps?(temp_booking.checkin_date..temp_booking.checkout_date)
     end
+
+    if @booking.checkin_date == temp_booking.checkin_date && @booking.checkout_date == temp_booking.checkout_date
+      @booking.update(booking_params)
+      redirect_to booking_path(@booking), notice: "Successfully Updated"
+    end
+
     if !overlap
       if @booking.update(booking_params)
         redirect_to booking_path(@booking), notice: "Successfully Updated"
@@ -50,9 +56,6 @@ class BookingsController < ApplicationController
         flash[:notice] = "Esta data já está reservada!!"
         render :edit
       end
-    else
-      flash[:notice] = "Esta data já está reservada!!"
-      render :edit
     end
 
   end
