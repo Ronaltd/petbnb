@@ -2,8 +2,12 @@ class LocalsController < ApplicationController
   before_action :set_local, only: [:show, :edit, :update, :destroy]
 
   def index
-    # object collection use policy_scope
-    @locals = policy_scope(Local)
+    if params[:query]
+      @locals = policy_scope(Local.where("city ILIKE ?", "%#{params[:query]}%"))
+    else
+      # object collection use policy_scope
+      @locals = policy_scope(Local)
+    end
   end
 
   def show
