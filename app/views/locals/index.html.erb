@@ -1,17 +1,20 @@
 <div class="container-fluid">
-  <h1 class="text-center pt-3 font-weight-bold mt-4 mb-5"></i>Locals Availables</h1>
-  <div class='d-flex flex-column justify-content-md-center mb-3'>
-    <% @locals.each do |local| %>
-      <div class="card-product">
-        <img src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg" />
-        <div class="card-product-infos">
-          <h2><%= local.name %></h2>
-          <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i>  <%= local.city %></p>
-          <p class="card-text mt-auto p-2"><i class="fas fa-dollar-sign" style="font-size:30px; color:#457b9d"></i>  <%= local.price %></p>
-          <%= link_to 'Check', local_path(local), class: 'btn-flat mt-auto p-22', target: "_blank" %>
-        </div>
-      </div>      
+  <h1 class="text-center pt-3 font-weight-bold mt-4 mb-2"></i>Locals Availables</h1>
+  <div class='d-flex justify-content mb-3 horizontal-scroll'>
+    <% @locals.each_slice(2) do |locals| %>
+    <div class="row col-5 d-block m-2"  >
+        <% locals.each do |local|%>
+          <div class="card-product m-5">
+            <img src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg" />
+            <div class="card-product-infos">
+              <h2><%= local.name %></h2>
+              <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i>  <%= local.city %></p>
+              <p class="card-text mt-auto p-2"><i class="fas fa-dollar-sign" style="font-size:30px; color:#457b9d"></i>  <%= local.price %></p>
+              <%= link_to 'Check', local_path(local), class: 'btn-flat mt-auto p-22', target: "_blank" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-     
   </div>
  </div>
