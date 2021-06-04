@@ -25,10 +25,10 @@ class BookingsController < ApplicationController
       if @booking.save
         redirect_to booking_path(@booking), notice: "Successfully Created"
       else
-        render :new, notice: "Esta data já está reservada!!"
+        render :new, notice: "Place already reserved for that day!"
       end
     else
-      render :new, notice: "Esta data já está reservada!!"
+      render :new, notice: "Place already reserved for that day!"
     end
   end
 
@@ -53,7 +53,7 @@ class BookingsController < ApplicationController
       if @booking.update(booking_params)
         redirect_to booking_path(@booking), notice: "Successfully Updated"
       else
-        flash[:notice] = "Esta data já está reservada!!"
+        flash[:notice] = "D"
         render :edit
       end
     end
