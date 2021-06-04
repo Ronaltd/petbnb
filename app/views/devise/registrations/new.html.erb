@@ -11,14 +11,20 @@
                       required: true,
                       autofocus: true,
                       input_html: { autocomplete: "username" }%>
-          <%= f.input :first_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "first name" }%>
-          <%= f.input :last_name,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "last name" }%>
+         <div class="row">
+          <div class="col-6">
+              <%= f.input :first_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "first name" }%>
+          </div>
+          <div class="col-6">
+              <%= f.input :last_name,
+                          required: true,
+                          autofocus: true,
+                          input_html: { autocomplete: "last name" }%>
+          </div>
+         </div>
           <%= f.input :email,
                       required: true,
                       autofocus: true,

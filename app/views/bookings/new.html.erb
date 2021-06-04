@@ -5,9 +5,17 @@
     <%= simple_form_for [@local, @booking] do |f| %>
       <%= f.input :checkin_date %>
       <%= f.input :checkout_date %>
-      <%= f.input :pet_name %>
-      <%= f.input :pet_type %>
-      <%= f.input :pet_weight %>
+      <div class="row">
+        <div class="col">
+          <%= f.input :pet_name %>
+        </div>
+        <div class="col">
+          <%= f.input :pet_type %>
+        </div>
+        <div class="col">
+          <%= f.input :pet_weight %>
+        </div>
+      </div>
       <%= f.submit %>
     <% end %>
 
