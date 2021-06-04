@@ -1,14 +1,14 @@
 <div class="container-fluid">
 
   <h1 class="text-center pt-3 font-weight-bold mt-4 mb-2"></i>Locals Availables</h1>
-  <div >
+  <div class="search-form" >
     <%= form_tag locals_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Find a local"
     %>
-    <div style="">
+    <div class="submit-button">
       <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
