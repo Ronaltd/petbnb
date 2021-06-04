@@ -1,5 +1,19 @@
 <div class="container-fluid">
+
   <h1 class="text-center pt-3 font-weight-bold mt-4 mb-2"></i>Locals Availables</h1>
+  <div >
+    <%= form_tag locals_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a local"
+    %>
+    <div style="">
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
   <div class='d-flex justify-content mb-3 horizontal-scroll'>
     <% @locals.each_slice(2) do |locals| %>
     <div class="row col-5 d-block m-2"  >
