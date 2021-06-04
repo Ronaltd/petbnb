@@ -19,7 +19,7 @@
 
       <% @locals.each do |local|%>
         <div class="card-product col-9">
-          <img src="https://q4g9y5a8.rocketcdn.me/wp-content/uploads/2020/02/home-banner-2020-02-min.jpg"/>
+          <img src="<%= local.user.photo %>"/>
           <div class="card-product-infos">
             <h2><%= local.name %></h2>
             <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i> <%= local.city %></p>
