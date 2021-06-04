@@ -19,7 +19,7 @@
 
       <% @locals.each do |local|%>
         <div class="card-product col-9">
-          <img src="<%= local.user.photo %>"/>
+          <img src="<%= local.photo %>" alt=""/>
           <div class="card-product-infos">
             <h2><%= local.name %></h2>
             <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i> <%= local.city %></p>
