@@ -2,9 +2,9 @@
 
   <h1 class="text-center pt-3 font-weight-bold mt-4 mb-2"></i>Locals Availables</h1>
 
-  <div class='d-flex justify-content-center mb-3'>
-    <div class="d-flex justify-content-center row">
-      <div class="search-form">
+  <div class='justify-content-center mb-3 '>
+    <div class="justify-content-center row">
+      <div class="search-form  ">
         <%= form_tag locals_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -24,7 +24,7 @@
             <h2><%= local.name %></h2>
             <p class="card-text"><i class="fas fa-map-marker-alt" style="font-size:30px; color:#457b9d"></i> <%= local.city %></p>
             <p class="card-text mt-auto p-2"><i class="fas fa-dollar-sign" style="font-size:30px; color:#457b9d"></i>  <%= local.price %></p>
-            <%= link_to 'Check', local_path(local), class: 'btn-flat mt-auto p-22', target: "_blank" %>
+            <%= link_to 'Check', local_path(local), class: 'btn-flat mt-4 p-22', target: "_blank" %>
           </div>
         </div>
       <% end %>
