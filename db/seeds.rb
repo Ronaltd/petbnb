@@ -12,8 +12,8 @@ Local.destroy_all
 User.create!(
   email: "teste01@teste.com",
   username: "Host1",
-  password: 'abc123',
-  photo: PHOTOS.sample
+  password: 'abc123'
+  
 )
 puts 'Creating Locals...'
 
@@ -22,7 +22,8 @@ Local.create!(
   name: "Dog Resort",
   city: "Av. Professor Mário Werneck - Belo Horizonte - MG",
   description: "Um hotel para o seu cão se sentir bem. 2.000 m² de área especialmente preparados para recebê-lo.",
-  price: "60"
+  price: "60",
+  photo: PHOTOS.sample
 
 )
 
@@ -31,7 +32,8 @@ Local.create!(
   name: "Sunshine Hotel para Cães",
   city: "Avenida Otacílio Negrão de Lima - Belo Horizonte - MG",
   description: "O hotel para você possa deixar o seu cãozinho em segurança e conforto.",
-  price: "70"
+  price: "70",
+  photo: PHOTOS.sample
   
 )
 
@@ -40,7 +42,8 @@ Local.create!(
   name: "Casa do Ronalt",
   city: "Rua Pium-í - Belo Horizonte - MG",
   description: "Um espaço amplo e confortável para o seu pet.",
-  price: "40"
+  price: "40",
+  photo: PHOTOS.sample
  
 )
 
@@ -49,7 +52,8 @@ Local.create!(
   name: "Espaço Pet Feliz",
   city: "Avenida Oviedo Teixeira - Aracaju - SE",
   description: "Tudo que o seu pet precisa enquanto você está fora!! Já hospedamos diversos pets.",
-  price: "40"
+  price: "40",
+  photo: PHOTOS.sample
   
 )
 
@@ -58,7 +62,8 @@ Local.create!(
   name: "Paws' care",
   city: "Rua Paim - São Paulo - SP",
   description: "Um hotel para você deixar o seu gatinho!",
-  price: "65"
+  price: "65",
+  photo: PHOTOS.sample
  
 )
 
@@ -67,7 +72,8 @@ Local.create!(
   name: "Cantinho Felino",
   city: "Rua Paim - São Paulo - SP",
   description: "Um hotel para você deixar o seu gatinho!",
-  price: "65"
+  price: "65",
+  photo: PHOTOS.sample
  
 )
 
@@ -76,7 +82,8 @@ Local.create!(
   name: "Gustavo",
   city: "Rua Francisco Cunha - São Paulo - SP",
   description: "Posso cuidar do seu cãozinho enquanto você não estiver viajando!",
-  price: "45"
+  price: "45",
+  photo: PHOTOS.sample
  
 )
 
@@ -85,7 +92,8 @@ Local.create!(
   name: "Claudia's Pets",
   city: "Rua da Saudade - São Paulo - SP",
   description: "Um ótimo daycare e hotel para o seu amiguinho, com um espaço enorme para diversão!",
-  price: "70"
+  price: "70",
+  photo: PHOTOS.sample
  
 )
 
@@ -94,7 +102,8 @@ Local.create!(
   name: "Igor - Daycare ",
   city: "Rua Paim - Rio de Janeiro - RJ",
   description: "Posso passear com o seu pet!",
-  price: "50"
+  price: "50",
+  photo: PHOTOS.sample
   
 )
 
